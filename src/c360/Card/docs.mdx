@@ -1,8 +1,10 @@
 import demo from '../../demo.css'
+import storybook from '../../storybook.css'
 import imageFile from '../../../static/demo/cars3-small.jpg'
 
 <style>
   {demo}
+  {storybook}
 </style>
 
 # Card
@@ -11,15 +13,11 @@ import imageFile from '../../../static/demo/cars3-small.jpg'
   Cards are a small collection of wrapped items used to display common information.
 </p>
 
-<c360-card>
-  <c360-headline slot="header" level="h3" size="small" color="brand">
-    This is a card's headline
-  </c360-headline>
+<c360-card class="storybook-component">
+  <span slot="header">This is a card's headline</span>
   <img slot="image" class="card-image card-image--with-border" src={imageFile} alt="Placeholder" />
-  <p slot="body" class="card-body--storybook">This is a card's body text.</p>
-  <c360-button slot="cta" variant="brand" transform="uppercase">
-    Card CTA
-  </c360-button>
+  <span slot="body">This is a card's body text.</span>
+  <span slot="cta">Card CTA</span>
 </c360-card>
 
 <br />

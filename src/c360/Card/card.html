@@ -1,17 +1,17 @@
 <div part="card">
-  <div part="header">
+  <c360-headline part="header" level="h3" size="small" color="brand">
     <slot name="header"></slot>
-  </div>
+  </c360-headline>
 
   <div part="image">
     <slot name="image"></slot>
   </div>
 
-  <div part="body">
+  <p part="body">
     <slot name="body"></slot>
-  </div>
+  </p>
 
-  <div part="cta">
+  <c360-button part="cta" variant="brand" transform="uppercase">
     <slot name="cta"></slot>
-  </div>
+  </c360-button>
 </div>

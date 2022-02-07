@@ -43,15 +43,11 @@ export const Base = () => {
     </div>
 
     <c360-card>
-      <c360-headline slot="header" level="h3" size="small" color="brand">
-        ${cardContent.headlineText}
-      </c360-headline>
+      <span slot="header">${cardContent.headlineText}</span>
 
-      <p slot="body">${cardContent.bodyText}</p>
+      <span slot="body">${cardContent.bodyText}</span>
 
-      <c360-button slot="cta" variant="brand" transform="uppercase">
-        ${cardContent.buttonText}
-      </c360-button>
+      <span slot="cta">${cardContent.buttonText}</span>
     <c360-card>
   `
 }
@@ -74,17 +70,13 @@ export const BaseWithImage = () => {
     </div>
 
     <c360-card>
-      <c360-headline slot="header" level="h3" size="small" color="brand">
-        ${cardContent.headlineText}
-      </c360-headline>
+      <span slot="header">${cardContent.headlineText}</span>
 
       <img slot="image" class="card-image card-image--with-border" src=${cardContent.image.src} alt=${cardContent.image.alt} />
 
-      <p slot="body" class="card-body">${cardContent.bodyText}</p>
+      <span slot="body">${cardContent.bodyText}</span>
 
-      <c360-button slot="cta" variant="brand" transform="uppercase">
-        ${cardContent.buttonText}
-      </c360-button>
+      <span slot="cta">${cardContent.buttonText}</span>
     <c360-card>
   `
 }

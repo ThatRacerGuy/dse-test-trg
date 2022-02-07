@@ -5,6 +5,7 @@
 }
 
 [part~='header'] {
+  display: block;
   margin-bottom: var(--sds-g-spacing-small);
 }
 
@@ -12,11 +13,13 @@
   color: var(--sds-g-color-neutral-base-contrast-4);
   font-size: var(--sds-g-font-size-5);
   margin-bottom: var(--sds-g-spacing-medium);
+  margin-top: 0;
 }
 
 /* Variant to vertically stretch all cards */
 
 :host([align='stretch']) [part~='card'] {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   height: 100%;

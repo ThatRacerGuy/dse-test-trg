@@ -65,55 +65,39 @@ let bottomAlignedWithImagesText = '';
 
 for (const card in cardContent) {
   baseText += `<c360-card slot="cards">
-      <c360-headline slot="header" level="h3" size="small" color="brand">
-        ${cardContent[card].headlineText}
-      </c360-headline>
+      <span slot="header">${cardContent[card].headlineText}</span>
 
-      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+      <span slot="body">${cardContent[card].bodyText}</span>
 
-      <c360-button slot="cta" variant="brand" transform="uppercase">
-        ${cardContent[card].buttonText}
-      </c360-button>
+      <span slot="cta">${cardContent[card].buttonText}</span>
     </c360-card>`;
 
   baseWithImagesText += `<c360-card slot="cards">
-      <c360-headline slot="header" level="h3" size="small" color="brand">
-        ${cardContent[card].headlineText}
-      </c360-headline>
+      <span slot="header">${cardContent[card].headlineText}</span>
 
       <img slot="image" class="card-image card-image--with-border" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
 
-      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+      <span slot="body">${cardContent[card].bodyText}</span>
 
-      <c360-button slot="cta" variant="brand" transform="uppercase">
-        ${cardContent[card].buttonText}
-      </c360-button>
+      <span slot="cta">${cardContent[card].buttonText}</span>
     </c360-card>`;
 
   bottomAlignedText += `<c360-card slot="cards" align="stretch">
-      <c360-headline slot="header" level="h3" size="small" color="brand">
-        ${cardContent[card].headlineText}
-      </c360-headline>
+      <span slot="header">${cardContent[card].headlineText}</span>
 
-      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+      <span slot="body">${cardContent[card].bodyText}</span>
 
-      <c360-button slot="cta" variant="brand" transform="uppercase">
-        ${cardContent[card].buttonText}
-      </c360-button>
+      <span slot="cta">${cardContent[card].buttonText}</span>
     </c360-card>`;
 
   bottomAlignedWithImagesText += `<c360-card slot="cards" align="stretch">
-      <c360-headline slot="header" level="h3" size="small" color="brand">
-        ${cardContent[card].headlineText}
-      </c360-headline>
+      <span slot="header">${cardContent[card].headlineText}</span>
 
       <img slot="image" class="card-image" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
 
-      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+      <span slot="body">${cardContent[card].bodyText}</span>
 
-      <c360-button slot="cta" variant="brand" transform="uppercase">
-        ${cardContent[card].buttonText}
-      </c360-button>
+      <span slot="cta">${cardContent[card].buttonText}</span>
     </c360-card>`;
 }
 
