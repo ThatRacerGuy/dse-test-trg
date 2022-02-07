@@ -31,17 +31,6 @@ export const Base = () => {
       ${demo}
     </style>
 
-    <div class="intro">
-      <c360-headline slot="header" level="h2" size="medium">
-        This story, the <em>Base</em> Card, uses the following information:
-      </c360-headline>
-
-      <ul>
-        <li>No optional representative image</li>
-        <li>Card has no width limits because it is not present in a Card Group</li>
-      </ul>
-    </div>
-
     <c360-card>
       <span slot="header">${cardContent.headlineText}</span>
 
@@ -57,17 +46,6 @@ export const BaseWithImage = () => {
     <style>
       ${demo}
     </style>
-
-    <div class="intro">
-      <c360-headline slot="header" level="h2" size="medium">
-        This story, the <em>Base With Image</em> Card, uses the following information:
-      </c360-headline>
-
-      <ul>
-        <li>Optional representative image, which has a border</li>
-        <li>Card has no width limits because it is not present in a Card Group</li>
-      </ul>
-    </div>
 
     <c360-card>
       <span slot="header">${cardContent.headlineText}</span>

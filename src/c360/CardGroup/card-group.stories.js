@@ -117,18 +117,6 @@ export const Base = () => {
       ${demo}
     </style>
 
-    <div class="intro">
-      <c360-headline slot="headline" level="h2" size="medium">
-        This story, the <em>Base</em> Card Group, uses the following information:
-      </c360-headline>
-
-      <ul>
-        <li>No optional headline</li>
-        <li>3 columns for the Cards in the Card Group</li>
-        <li>Cards do not contain the optional representative image</li>
-      </ul>
-    </div>
-
     <c360-card-group columns="3">
       ${baseText}
     <c360-card-group>
@@ -140,18 +128,6 @@ export const BaseWithImages = () => {
     <style>
       ${demo}
     </style>
-
-    <div class="intro">
-      <c360-headline level="h2" size="medium">
-        This story, the <em>Base With Images</em> Card Group, uses the following information:
-      </c360-headline>
-
-      <ul>
-        <li>Optional headline</li>
-        <li>4 columns for the Cards in the Card Group</li>
-        <li>Cards contain the optional representative image, which has a border</li>
-      </ul>
-    </div>
 
     <c360-card-group columns="4">
       <c360-headline slot="headline" level="h2" size="x-large">
@@ -169,19 +145,6 @@ export const BottomAligned = () => {
       ${demo}
     </style>
 
-    <div class="intro">
-      <c360-headline level="h2" size="medium">
-        This story, the <em>Bottom Aligned</em> Card Group, uses the following information:
-      </c360-headline>
-
-      <ul>
-        <li>Optional headline</li>
-        <li>5 columns for the Cards in the Card Group</li>
-        <li>Cards do not contain the optional representative image</li>
-        <li>Buttons, the last elements of each card, are bottom-aligned</li>
-      </ul>
-    </div>
-
     <c360-card-group columns="5">
       <c360-headline slot="headline" level="h2" size="x-large">
         ${headlineText}
@@ -198,25 +161,36 @@ export const BottomAlignedWithImages = () => {
       ${demo}
     </style>
 
-    <div class="intro">
-      <c360-headline slot="header" level="h2" size="medium">
-        This story, the <em>Bottom Aligned With Images</em> Card Group, uses the following information:
-      </c360-headline>
-
-      <ul>
-        <li>Optional headline</li>
-        <li>3 columns for the Cards in the Card Group</li>
-        <li>Cards contain the optional representative image, which doesn't have a border</li>
-        <li>Buttons, the last elements of each card, are bottom-aligned</li>
-      </ul>
-    </div>
-
     <c360-card-group columns="3">
       <c360-headline slot="headline" level="h2" size="x-large">
         ${headlineText}
       </c360-headline>
 
       ${bottomAlignedWithImagesText}
+    <c360-card-group>
+  `
+}
+
+export const Single = () => {
+  return fragmentFrom.html`
+    <style>
+      ${demo}
+    </style>
+
+    <c360-card-group>
+      <c360-headline slot="headline" level="h2" size="x-large">
+        ${headlineText}
+      </c360-headline>
+
+      <c360-card slot="cards">
+        <span slot="header">${cardContent[0].headlineText}</span>
+
+        <img slot="image" class="card-image card-image--with-border" src=${cardContent[0].image.src} alt=${cardContent[0].image.alt} />
+
+        <span slot="body">${cardContent[0].bodyText}</span>
+
+        <span slot="cta">${cardContent[0].buttonText}</span>
+      </c360-card>
     <c360-card-group>
   `
 }

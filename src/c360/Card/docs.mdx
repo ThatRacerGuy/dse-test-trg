@@ -1,11 +1,4 @@
-import demo from '../../demo.css'
-import storybook from '../../storybook.css'
-import imageFile from '../../../static/demo/cars3-small.jpg'
-
-<style>
-  {demo}
-  {storybook}
-</style>
+import { Story } from '@storybook/addon-docs/blocks';
 
 # Card
 
@@ -13,12 +6,16 @@ import imageFile from '../../../static/demo/cars3-small.jpg'
   Cards are a small collection of wrapped items used to display common information.
 </p>
 
-<c360-card class="storybook-component">
-  <span slot="header">This is a card's headline</span>
-  <img slot="image" class="card-image card-image--with-border" src={imageFile} alt="Placeholder" />
-  <span slot="body">This is a card's body text.</span>
-  <span slot="cta">Card CTA</span>
-</c360-card>
+## Card Example
+
+The following story/example, using the the <em>Base With Image</em> Card, uses the following information:
+
+- Optional representative image, which has a border
+- Card has no width limits because it is not present in a Card Group
+
+<Story id="c360-components-card--base-with-image" />
+
+<Story id="c360-components-card--single" />
 
 <br />
 
