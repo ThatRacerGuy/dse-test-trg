@@ -1,0 +1,26 @@
+.card-body {
+  margin: 0;
+}
+
+.card-image {
+  margin-bottom: var(--sds-g-spacing-small);
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.card-image--with-border {
+  border: 1px solid var(--sds-g-color-neutral-base-contrast-1);
+  max-width: calc(100% - 2px);
+}
+
+.intro {
+  border: 1px solid var(--sds-g-color-neutral-base-contrast-1);
+  margin-bottom: var(--sds-g-spacing-medium);
+  padding: var(--sds-g-spacing-medium) var(--sds-g-spacing-medium) 0;
+}
+
+.card-body--storybook {
+  color: var(--sds-g-color-neutral-base-contrast-4);
+  font: inherit;
+  margin: 0;
+}

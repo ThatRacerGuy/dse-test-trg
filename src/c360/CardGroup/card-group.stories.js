@@ -1,8 +1,125 @@
 import { fragmentFrom } from 'elix/src/core/htmlLiterals'
+import C360CardGroup from './card-group'
 import docs from './docs.mdx'
+
+import demo from '../../demo.css'
+import imageFile1 from '../../../static/demo/cars1.jpg'
+import imageFile2 from '../../../static/demo/cars2.jpg'
+import imageFile3 from '../../../static/demo/cars3.jpg'
+import imageFile4 from '../../../static/demo/cars4.jpg'
+import imageFile5 from '../../../static/demo/cars5.jpg'
+
+const headlineText = `This is an x-large H2 headline`;
+const cardContent = [
+  {
+    headlineText: "This is a small H3 headline",
+    bodyText: "Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+    buttonText: "CTA button",
+    image: {
+      src: imageFile3,
+      alt: "Placeholder",
+    },
+  },
+  {
+    headlineText: "This is a small H3 headline",
+    bodyText: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+    buttonText: "CTA button",
+    image: {
+      src: imageFile5,
+      alt: "Placeholder",
+    },
+  },
+  {
+    headlineText: "This is a small H3 headline",
+    bodyText: "Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+    buttonText: "CTA button",
+    image: {
+      src: imageFile2,
+      alt: "Placeholder",
+    },
+  },
+  {
+    headlineText: "This is a small H3 headline",
+    bodyText: "Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+    buttonText: "CTA button",
+    image: {
+      src: imageFile1,
+      alt: "Placeholder",
+    },
+  },
+  {
+    headlineText: "This is a small H3 headline",
+    bodyText: "Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+    buttonText: "CTA button",
+    image: {
+      src: imageFile4,
+      alt: "Placeholder",
+    },
+  }
+];
+
+let baseText = '';
+let baseWithImagesText = '';
+let bottomAlignedText = '';
+let bottomAlignedWithImagesText = '';
+
+for (const card in cardContent) {
+  baseText += `<c360-card slot="cards">
+      <c360-headline slot="header" level="h3" size="small" color="brand">
+        ${cardContent[card].headlineText}
+      </c360-headline>
+
+      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+
+      <c360-button slot="cta" variant="brand" transform="uppercase">
+        ${cardContent[card].buttonText}
+      </c360-button>
+    </c360-card>`;
+
+  baseWithImagesText += `<c360-card slot="cards">
+      <c360-headline slot="header" level="h3" size="small" color="brand">
+        ${cardContent[card].headlineText}
+      </c360-headline>
+
+      <img slot="image" class="card-image card-image--with-border" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
+
+      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+
+      <c360-button slot="cta" variant="brand" transform="uppercase">
+        ${cardContent[card].buttonText}
+      </c360-button>
+    </c360-card>`;
+
+  bottomAlignedText += `<c360-card slot="cards" align="stretch">
+      <c360-headline slot="header" level="h3" size="small" color="brand">
+        ${cardContent[card].headlineText}
+      </c360-headline>
+
+      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+
+      <c360-button slot="cta" variant="brand" transform="uppercase">
+        ${cardContent[card].buttonText}
+      </c360-button>
+    </c360-card>`;
+
+  bottomAlignedWithImagesText += `<c360-card slot="cards" align="stretch">
+      <c360-headline slot="header" level="h3" size="small" color="brand">
+        ${cardContent[card].headlineText}
+      </c360-headline>
+
+      <img slot="image" class="card-image" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
+
+      <p slot="body" class="card-body">${cardContent[card].bodyText}</p>
+
+      <c360-button slot="cta" variant="brand" transform="uppercase">
+        ${cardContent[card].buttonText}
+      </c360-button>
+    </c360-card>`;
+}
 
 export default {
   title: 'C360 Components/Card Group',
+  component: C360CardGroup,
   parameters: {
     docs: {
       page: docs
@@ -10,28 +127,112 @@ export default {
   }
 }
 
-export const RFC = () => {
+export const Base = () => {
   return fragmentFrom.html`
-    <h1>Card Group</h1>
-    <p>
-      You need to build this Card Group component from the specs
-      outlined in the project's README file. Add one or more
-      additional "Stories" (this function is a story) that
-      showcase your component, and use Storybook's addons, such as
-      the responsive viewport, or the AXE accessibility validator,
-      to ensure that your component code is bulletproof.
-    </p>
-    <p>
-      We have scaffolded out two components to assist with your
-      development - this one, which is intended to contain the entire
-      component structure, as well as a 'Card' component to represent
-      an individual card.
-    </p>
+    <style>
+      ${demo}
+    </style>
+
+    <div class="intro">
+      <c360-headline slot="headline" level="h2" size="medium">
+        This story, the <em>Base</em> Card Group, uses the following information:
+      </c360-headline>
+
+      <ul>
+        <li>No optional headline</li>
+        <li>3 columns for the Cards in the Card Group</li>
+        <li>Cards do not contain the optional representative image</li>
+      </ul>
+    </div>
+
+    <c360-card-group columns="3">
+      ${baseText}
+    <c360-card-group>
   `
 }
 
-export const Base = () => {
+export const BaseWithImages = () => {
   return fragmentFrom.html`
-    <c360-card-group />
+    <style>
+      ${demo}
+    </style>
+
+    <div class="intro">
+      <c360-headline level="h2" size="medium">
+        This story, the <em>Base With Images</em> Card Group, uses the following information:
+      </c360-headline>
+
+      <ul>
+        <li>Optional headline</li>
+        <li>4 columns for the Cards in the Card Group</li>
+        <li>Cards contain the optional representative image, which has a border</li>
+      </ul>
+    </div>
+
+    <c360-card-group columns="4">
+      <c360-headline slot="headline" level="h2" size="x-large">
+        ${headlineText}
+      </c360-headline>
+
+      ${baseWithImagesText}
+    <c360-card-group>
+  `
+}
+
+export const BottomAligned = () => {
+  return fragmentFrom.html`
+    <style>
+      ${demo}
+    </style>
+
+    <div class="intro">
+      <c360-headline level="h2" size="medium">
+        This story, the <em>Bottom Aligned</em> Card Group, uses the following information:
+      </c360-headline>
+
+      <ul>
+        <li>Optional headline</li>
+        <li>5 columns for the Cards in the Card Group</li>
+        <li>Cards do not contain the optional representative image</li>
+        <li>Buttons, the last elements of each card, are bottom-aligned</li>
+      </ul>
+    </div>
+
+    <c360-card-group columns="5">
+      <c360-headline slot="headline" level="h2" size="x-large">
+        ${headlineText}
+      </c360-headline>
+
+      ${bottomAlignedText}
+    <c360-card-group>
+  `
+}
+
+export const BottomAlignedWithImages = () => {
+  return fragmentFrom.html`
+    <style>
+      ${demo}
+    </style>
+
+    <div class="intro">
+      <c360-headline slot="header" level="h2" size="medium">
+        This story, the <em>Bottom Aligned With Images</em> Card Group, uses the following information:
+      </c360-headline>
+
+      <ul>
+        <li>Optional headline</li>
+        <li>3 columns for the Cards in the Card Group</li>
+        <li>Cards contain the optional representative image, which doesn't have a border</li>
+        <li>Buttons, the last elements of each card, are bottom-aligned</li>
+      </ul>
+    </div>
+
+    <c360-card-group columns="3">
+      <c360-headline slot="headline" level="h2" size="x-large">
+        ${headlineText}
+      </c360-headline>
+
+      ${bottomAlignedWithImagesText}
+    <c360-card-group>
   `
 }

@@ -1,8 +1,23 @@
 import { fragmentFrom } from 'elix/src/core/htmlLiterals'
+import C360Card from './card'
 import docs from './docs.mdx'
+
+import demo from '../../demo.css'
+import imageFile from '../../../static/demo/cars3-small.jpg'
+
+const cardContent = {
+  headlineText: "This is a small H3 headline",
+  bodyText: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+  buttonText: "CTA button",
+  image: {
+    src: imageFile,
+    alt: "Placeholder",
+  },
+}
 
 export default {
   title: 'C360 Components/Card',
+  compontent: C360Card,
   parameters: {
     docs: {
       page: docs
@@ -10,28 +25,66 @@ export default {
   }
 }
 
-export const RFC = () => {
+export const Base = () => {
   return fragmentFrom.html`
-    <h1>Card</h1>
-    <p>
-      You need to build this Card component from the specs
-      outlined in the project's README file. Add one or more
-      additional "Stories" (this function is a story) that
-      showcase your component, and use Storybook's addons, such as
-      the responsive viewport, or the AXE accessibility validator,
-      to ensure that your component code is bulletproof.
-    </p>
-    <p>
-      We have scaffolded out two components to assist with your
-      development - this one, which is intended to contain the contents
-      within the shaded 'card', as well as a 'CardGroup' component,
-      that containts the composed component's structure.
-    </p>
+    <style>
+      ${demo}
+    </style>
+
+    <div class="intro">
+      <c360-headline slot="header" level="h2" size="medium">
+        This story, the <em>Base</em> Card, uses the following information:
+      </c360-headline>
+
+      <ul>
+        <li>No optional representative image</li>
+        <li>Card has no width limits because it is not present in a Card Group</li>
+      </ul>
+    </div>
+
+    <c360-card>
+      <c360-headline slot="header" level="h3" size="small" color="brand">
+        ${cardContent.headlineText}
+      </c360-headline>
+
+      <p slot="body">${cardContent.bodyText}</p>
+
+      <c360-button slot="cta" variant="brand" transform="uppercase">
+        ${cardContent.buttonText}
+      </c360-button>
+    <c360-card>
   `
 }
 
-export const Base = () => {
+export const BaseWithImage = () => {
   return fragmentFrom.html`
-    <c360-card />
+    <style>
+      ${demo}
+    </style>
+
+    <div class="intro">
+      <c360-headline slot="header" level="h2" size="medium">
+        This story, the <em>Base With Image</em> Card, uses the following information:
+      </c360-headline>
+
+      <ul>
+        <li>Optional representative image, which has a border</li>
+        <li>Card has no width limits because it is not present in a Card Group</li>
+      </ul>
+    </div>
+
+    <c360-card>
+      <c360-headline slot="header" level="h3" size="small" color="brand">
+        ${cardContent.headlineText}
+      </c360-headline>
+
+      <img slot="image" class="card-image card-image--with-border" src=${cardContent.image.src} alt=${cardContent.image.alt} />
+
+      <p slot="body" class="card-body">${cardContent.bodyText}</p>
+
+      <c360-button slot="cta" variant="brand" transform="uppercase">
+        ${cardContent.buttonText}
+      </c360-button>
+    <c360-card>
   `
 }

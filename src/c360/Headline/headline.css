@@ -15,3 +15,7 @@
 :host([size='small']) {
   --sds-c-headline-font-size: var(--sds-g-font-size-7);
 }
+
+:host([color='brand']) {
+  color: var(--sds-g-color-brand-base-contrast-3);
+}

@@ -1,3 +1,69 @@
-div {
-  border: 1px solid #333;
+:host {
+  display: block;
+  margin-bottom: var(--sds-g-spacing-large);
+}
+
+[part~='headline'] {
+  margin-bottom: var(--sds-g-spacing-large);
+}
+
+[part~='cards'] {
+  column-gap: var(--sds-g-spacing-small);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: var(--sds-g-spacing-small);
+}
+
+/* Variants to set number of columns - values for small/large mobile and tablet */
+
+@media (min-width: 768px) {
+  :host([columns]) [part~='cards'] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Variants to set different number of columns, from 2 to 6 on desktop */
+
+/* 3 columns on desktop */
+
+@media (min-width: 1024px) {
+  :host([columns='3']) [part~='cards'] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 4 columns on desktop */
+
+@media (min-width: 1024px) {
+  :host([columns='4']) [part~='cards'] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 5 columns on desktop */
+
+@media (min-width: 768px) {
+  :host([columns='5']) [part~='cards'] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  :host([columns='5']) [part~='cards'] {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* 6 columns on desktop */
+
+@media (min-width: 768px) {
+  :host([columns='6']) [part~='cards'] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  :host([columns='6']) [part~='cards'] {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

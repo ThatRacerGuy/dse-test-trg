@@ -1,5 +1,71 @@
+import demo from '../../demo.css'
+import imageFile from '../../../static/demo/cars3-small.jpg'
+
+<style>
+  {demo}
+</style>
+
 # Card
 
-Documentation can be added here in MDX format.
+<p class="docs__summary">
+  Cards are a small collection of wrapped items used to display common information.
+</p>
 
-More information about MDX can be found [on their website](https://mdxjs.com/).
+<c360-card>
+  <c360-headline slot="header" level="h3" size="small" color="brand">
+    This is a card's headline
+  </c360-headline>
+  <img slot="image" class="card-image card-image--with-border" src={imageFile} alt="Placeholder" />
+  <p slot="body" class="card-body--storybook">This is a card's body text.</p>
+  <c360-button slot="cta" variant="brand" transform="uppercase">
+    Card CTA
+  </c360-button>
+</c360-card>
+
+<br />
+
+## About Cards
+
+Cards should be used in situations where users might need to:
+
+- show condensed article information
+- organize common elements
+- call out information with multiple types of data
+
+## Card Content
+
+Cards make use of the following types of data/content in order, with starred* content required:
+
+- Headline*, using the C360 Headline web component
+- Image, using an HTML image
+- Body text*, using an HTML paragraph
+- Button*, using the C360 Button web component
+
+## Card Configuration
+
+Cards make use of two other C360 components - the Button and Headline.
+
+### Buttons and Headlines
+
+By using the Button web component, the following configuration is available:
+
+- <em>Variant</em> - normal/base (default), <strong>brand</strong>, and destructive
+- <em>Transform (NEW)</em> - <strong>uppercase</strong> and lowercase
+
+By using the Headline web component, the following configuration is available:
+
+- <em>Level</em> - h1, h2, <strong>h3</strong>, h4, h5, h6
+- <em>Size</em> - x-large, large, medium, and <strong>small</strong> (default matches the Level)
+- <em>Color (NEW)</em> - normal/base (default) and <strong>brand</strong>
+
+Cards use the <strong>brand</strong> variant / <strong>uppercase</strong> transform configuration of the button and the <strong>h3</strong> level / <strong>small</strong> size / <strong>brand</strong> color configuration of the headline.
+
+### Widths and Alignment
+
+Cards have a configuration that controls the button placement with vertical alignment, where the following configuration is available:
+
+- <em>Align</em> - stretch
+
+This is only using in conjunction with the Card Group as a parent. Otherwise, cards take only as much height as required by its content.
+
+Cards also have a configuration that controls their width, but this is only with the Card Group as a parent. Otherwise, cards take up the full width of their allotted space.

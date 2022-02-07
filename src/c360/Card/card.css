@@ -1,3 +1,27 @@
-div {
-  border: 1px solid #333;
+[part~='card'] {
+  background: var(--sds-g-color-neutral-base-2);
+  box-sizing: border-box;
+  padding: var(--sds-g-spacing-medium) var(--sds-g-spacing-small);
+}
+
+[part~='header'] {
+  margin-bottom: var(--sds-g-spacing-small);
+}
+
+[part~='body'] {
+  color: var(--sds-g-color-neutral-base-contrast-4);
+  font-size: var(--sds-g-font-size-5);
+  margin-bottom: var(--sds-g-spacing-medium);
+}
+
+/* Variant to vertically stretch all cards */
+
+:host([align='stretch']) [part~='card'] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+:host([align='stretch']) [part~='cta'] {
+  margin-top: auto;
 }

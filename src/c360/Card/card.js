@@ -16,6 +16,7 @@ import { template } from 'elix/src/base/internal'
 import { templateFrom } from 'elix/src/core/htmlLiterals.js'
 
 import stylesheet from './card.css'
+import html from './card.html'
 
 class C360Card extends ReactiveElement {
   get [template]() {
@@ -24,7 +25,7 @@ class C360Card extends ReactiveElement {
         ${stylesheet}
       </style>
 
-      <div>[Your Card Component Template Goes Here]</div>
+      ${html}
     `
   }
 }

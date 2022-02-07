@@ -1,5 +1,87 @@
+import demo from '../../demo.css'
+import imageFile1 from '../../../static/demo/cars1.jpg'
+import imageFile2 from '../../../static/demo/cars2.jpg'
+import imageFile3 from '../../../static/demo/cars3.jpg'
+
+<style>
+  {demo}
+</style>
+
 # Card Group
 
-Documentation can be added here in MDX format.
+<p class="docs__summary">
+  Cards Groups are collections of cards and an optional headline with a common theme.
+</p>
 
-More information about MDX can be found [on their website](https://mdxjs.com/).
+<c360-card-group columns="3">
+  <c360-headline slot="headline" level="h2" size="x-large">
+    Card Group Headline
+  </c360-headline>
+
+  <c360-card slot="cards" align="stretch">
+    <c360-headline slot="header" level="h3" size="small" color="brand">
+      This is a card's headline
+    </c360-headline>
+    <img slot="image" class="card-image card-image--with-border" src={imageFile1} alt="Placeholder" />
+    <p slot="body" class="card-body--storybook">This is a card's body text. These cars <em>do</em> look a lot faster in person.</p>
+    <c360-button slot="cta" variant="brand" transform="uppercase">
+      Card CTA
+    </c360-button>
+  </c360-card>
+
+  <c360-card slot="cards" align="stretch">
+    <c360-headline slot="header" level="h3" size="small" color="brand">
+      This is another card's headline
+    </c360-headline>
+    <img slot="image" class="card-image card-image--with-border" src={imageFile2} alt="Placeholder" />
+    <p slot="body" class="card-body--storybook">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    <c360-button slot="cta" variant="brand" transform="uppercase">
+      Card CTA
+    </c360-button>
+  </c360-card>
+
+  <c360-card slot="cards" align="stretch">
+    <c360-headline slot="header" level="h3" size="small" color="brand">
+      This is another-er card's headline
+    </c360-headline>
+    <img slot="image" class="card-image card-image--with-border" src={imageFile3} alt="Placeholder" />
+    <p slot="body" class="card-body--storybook">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    <c360-button slot="cta" variant="brand" transform="uppercase">
+      Card CTA
+    </c360-button>
+  </c360-card>
+</c360-card-group>
+
+<c360-card-group>
+  <c360-headline slot="headline" level="h2" size="x-large">
+    Second Card Group Headline
+  </c360-headline>
+
+  <c360-card slot="cards" align="stretch">
+    <c360-headline slot="header" level="h3" size="small" color="brand">
+      This is a card's headline
+    </c360-headline>
+    <img slot="image" class="card-image card-image--with-border" src={imageFile1} alt="Placeholder" />
+    <p slot="body" class="card-body--storybook">This is a card's body text. These cars <em>do</em> look a lot faster in person.</p>
+    <c360-button slot="cta" variant="brand" transform="uppercase">
+      Card CTA
+    </c360-button>
+  </c360-card>
+</c360-card-group>
+
+## Card Group Content
+
+Card Groups make use of the following types of data/content in order, though none are required:
+
+- Headline, using the C360 Headline web component
+- Cards, using the C360 Card web component
+
+While there are is no required content, using one or several cards is recommended.
+
+## Card Group Configuration
+
+Card Groups have a configuration that controls the width of its child cards. The following size configuration is available to control the width of each child Card:
+
+- <em>Columns</em> - 2, 3, 4, 5, 6
+
+None of the column values are default. If no configuration is given, child cards take up the full width of their allotted space.

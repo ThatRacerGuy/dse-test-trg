@@ -9,3 +9,11 @@
   );
   --sds-c-button-color-text: var(--sds-g-color-destructive-base-1);
 }
+
+:host([transform='uppercase']) button {
+  text-transform: uppercase;
+}
+
+:host([transform='lowercase']) button {
+  text-transform: lowercase;
+}
