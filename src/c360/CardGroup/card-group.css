@@ -4,6 +4,7 @@
 }
 
 [part~='headline'] {
+  display: block;
   margin-bottom: var(--sds-g-spacing-large);
 }
 

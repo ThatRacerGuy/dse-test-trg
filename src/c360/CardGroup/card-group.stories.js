@@ -130,9 +130,7 @@ export const BaseWithImages = () => {
     </style>
 
     <c360-card-group columns="4">
-      <c360-headline slot="headline" level="h2" size="x-large">
-        ${headlineText}
-      </c360-headline>
+      <span slot="headline">${headlineText}</span>
 
       ${baseWithImagesText}
     </c360-card-group>
@@ -146,9 +144,7 @@ export const BottomAligned = () => {
     </style>
 
     <c360-card-group columns="5">
-      <c360-headline slot="headline" level="h2" size="x-large">
-        ${headlineText}
-      </c360-headline>
+      <span slot="headline">${headlineText}</span>
 
       ${bottomAlignedText}
     </c360-card-group>
@@ -162,9 +158,7 @@ export const BottomAlignedWithImages = () => {
     </style>
 
     <c360-card-group columns="3">
-      <c360-headline slot="headline" level="h2" size="x-large">
-        ${headlineText}
-      </c360-headline>
+      <span slot="headline">${headlineText}</span>
 
       ${bottomAlignedWithImagesText}
     </c360-card-group>
@@ -178,9 +172,7 @@ export const Single = () => {
     </style>
 
     <c360-card-group>
-      <c360-headline slot="headline" level="h2" size="x-large">
-        ${headlineText}
-      </c360-headline>
+      <span slot="headline">${headlineText}</span>
 
       <c360-card slot="cards">
         <span slot="header">${cardContent[0].headlineText}</span>
