@@ -119,7 +119,7 @@ export const Base = () => {
 
     <c360-card-group columns="3">
       ${baseText}
-    <c360-card-group>
+    </c360-card-group>
   `
 }
 
@@ -135,7 +135,7 @@ export const BaseWithImages = () => {
       </c360-headline>
 
       ${baseWithImagesText}
-    <c360-card-group>
+    </c360-card-group>
   `
 }
 
@@ -151,7 +151,7 @@ export const BottomAligned = () => {
       </c360-headline>
 
       ${bottomAlignedText}
-    <c360-card-group>
+    </c360-card-group>
   `
 }
 
@@ -167,7 +167,7 @@ export const BottomAlignedWithImages = () => {
       </c360-headline>
 
       ${bottomAlignedWithImagesText}
-    <c360-card-group>
+    </c360-card-group>
   `
 }
 
@@ -191,6 +191,6 @@ export const Single = () => {
 
         <span slot="cta">${cardContent[0].buttonText}</span>
       </c360-card>
-    <c360-card-group>
+    </c360-card-group>
   `
 }

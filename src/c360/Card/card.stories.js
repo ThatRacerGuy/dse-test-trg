@@ -37,7 +37,7 @@ export const Base = () => {
       <span slot="body">${cardContent.bodyText}</span>
 
       <span slot="cta">${cardContent.buttonText}</span>
-    <c360-card>
+    </c360-card>
   `
 }
 
@@ -55,6 +55,6 @@ export const BaseWithImage = () => {
       <span slot="body">${cardContent.bodyText}</span>
 
       <span slot="cta">${cardContent.buttonText}</span>
-    <c360-card>
+    </c360-card>
   `
 }
