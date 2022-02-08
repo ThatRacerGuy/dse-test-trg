@@ -2,7 +2,6 @@ import { fragmentFrom } from 'elix/src/core/htmlLiterals'
 import C360Card from './card'
 import docs from './docs.mdx'
 
-import demo from '../../demo.css'
 import imageFile from '../../../static/demo/cars3-small.jpg'
 
 const cardContent = {
@@ -27,10 +26,6 @@ export default {
 
 export const Base = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
     <c360-card>
       <span slot="header">${cardContent.headlineText}</span>
 
@@ -43,14 +38,10 @@ export const Base = () => {
 
 export const BaseWithImage = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
-    <c360-card>
+    <c360-card images="with-borders">
       <span slot="header">${cardContent.headlineText}</span>
 
-      <img slot="image" class="card-image card-image--with-border" src=${cardContent.image.src} alt=${cardContent.image.alt} />
+      <img slot="image" src=${cardContent.image.src} alt=${cardContent.image.alt} />
 
       <span slot="body">${cardContent.bodyText}</span>
 

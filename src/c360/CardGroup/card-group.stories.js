@@ -2,7 +2,6 @@ import { fragmentFrom } from 'elix/src/core/htmlLiterals'
 import C360CardGroup from './card-group'
 import docs from './docs.mdx'
 
-import demo from '../../demo.css'
 import imageFile1 from '../../../static/demo/cars1.jpg'
 import imageFile2 from '../../../static/demo/cars2.jpg'
 import imageFile3 from '../../../static/demo/cars3.jpg'
@@ -72,10 +71,10 @@ for (const card in cardContent) {
       <span slot="cta">${cardContent[card].buttonText}</span>
     </c360-card>`;
 
-  baseWithImagesText += `<c360-card slot="cards">
+  baseWithImagesText += `<c360-card slot="cards" images="with-borders">
       <span slot="header">${cardContent[card].headlineText}</span>
 
-      <img slot="image" class="card-image card-image--with-border" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
+      <img slot="image" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
 
       <span slot="body">${cardContent[card].bodyText}</span>
 
@@ -93,7 +92,7 @@ for (const card in cardContent) {
   bottomAlignedWithImagesText += `<c360-card slot="cards" align="stretch">
       <span slot="header">${cardContent[card].headlineText}</span>
 
-      <img slot="image" class="card-image" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
+      <img slot="image" src=${cardContent[card].image.src} alt=${cardContent[card].image.alt} />
 
       <span slot="body">${cardContent[card].bodyText}</span>
 
@@ -113,10 +112,6 @@ export default {
 
 export const Base = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
     <c360-card-group columns="3">
       ${baseText}
     </c360-card-group>
@@ -125,10 +120,6 @@ export const Base = () => {
 
 export const BaseWithImages = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
     <c360-card-group columns="4">
       <span slot="headline">${headlineText}</span>
 
@@ -139,10 +130,6 @@ export const BaseWithImages = () => {
 
 export const BottomAligned = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
     <c360-card-group columns="5">
       <span slot="headline">${headlineText}</span>
 
@@ -153,10 +140,6 @@ export const BottomAligned = () => {
 
 export const BottomAlignedWithImages = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
     <c360-card-group columns="3">
       <span slot="headline">${headlineText}</span>
 
@@ -167,17 +150,13 @@ export const BottomAlignedWithImages = () => {
 
 export const Single = () => {
   return fragmentFrom.html`
-    <style>
-      ${demo}
-    </style>
-
     <c360-card-group>
       <span slot="headline">${headlineText}</span>
 
-      <c360-card slot="cards">
+      <c360-card slot="cards" images="with-borders">
         <span slot="header">${cardContent[0].headlineText}</span>
 
-        <img slot="image" class="card-image card-image--with-border" src=${cardContent[0].image.src} alt=${cardContent[0].image.alt} />
+        <img slot="image" src=${cardContent[0].image.src} alt=${cardContent[0].image.alt} />
 
         <span slot="body">${cardContent[0].bodyText}</span>
 

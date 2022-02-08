@@ -28,3 +28,17 @@
 :host([align='stretch']) [part~='cta'] {
   margin-top: auto;
 }
+
+/* Optional image styling */
+
+::slotted(img) {
+  height: auto;
+  margin-bottom: var(--sds-g-spacing-small);
+  max-width: 100%;
+  vertical-align: top;
+}
+
+:host([images='with-borders']) ::slotted(img) {
+  border: 1px solid var(--sds-g-color-neutral-base-contrast-1);
+  max-width: calc(100% - 2px);
+}
